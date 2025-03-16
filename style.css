@@ -1,1 +1,29 @@
-
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.memory-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 2px solid black;
+    margin: 20px auto;
+}
+.segment {
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+.text-segment { background-color: lightblue; }
+.data-segment { background-color: lightcoral; }
+.heap { background-color: lightgreen; min-height: 50px; }
+.stack { background-color: lightgoldenrodyellow; min-height: 50px; }
+.legend {
+    margin-top: 20px;
+}
+.heap-block, .stack-block {
+    background-color: darkgreen;
+    color: white;
+    margin: 5px auto;
+    padding: 5px;
+    width: 80%;
+}

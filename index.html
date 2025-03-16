@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione della Memoria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gestione della Memoria</h1>
+    <div class="memory-container">
+        <div class="segment text-segment">Text Segment</div>
+        <div class="segment data-segment">Data Segment</div>
+        <div class="segment heap" id="heap">Heap</div>
+        <div class="segment stack" id="stack">Stack</div>
+    </div>
+    <button onclick="allocateMemory()">Allocare Memoria</button>
+    <button onclick="deallocateMemory()">Deallocare Memoria</button>
+    <button onclick="pushStack()">Push Stack</button>
+    <button onclick="popStack()">Pop Stack</button>
+    <div class="legend">
+        <h3>Legenda:</h3>
+        <p><span style="background-color: lightblue; padding: 2px 5px;">&nbsp;</span> Text Segment</p>
+        <p><span style="background-color: lightcoral; padding: 2px 5px;">&nbsp;</span> Data Segment</p>
+        <p><span style="background-color: lightgreen; padding: 2px 5px;">&nbsp;</span> Heap</p>
+        <p><span style="background-color: lightgoldenrodyellow; padding: 2px 5px;">&nbsp;</span> Stack</p>
+    </div>
 
+    <script>
+        function allocateMemory() {
+            let heap = document.getElementById("heap");
+            let block = document.createElement("div");
+            block.className = "heap-block";
+            block.textContent = "Allocato";
+            heap.appendChild(block);
+        }
+        
+        function deallocateMemory() {
+            let heap = document.getElementById("heap");
+            if (heap.lastChild) {
+                heap.removeChild(heap.lastChild);
+            }
+        }
+
+        function pushStack() {
+            let stack = document.getElementById("stack");
+            let block = document.createElement("div");
+            block.className = "stack-block";
+            block.textContent = "Frame";
+            stack.appendChild(block);
+        }
+
+        function popStack() {
+            let stack = document.getElementById("stack");
+            if (stack.lastChild) {
+                stack.removeChild(stack.lastChild);
+            }
+        }
+    </script>
+</body>
+</html>
